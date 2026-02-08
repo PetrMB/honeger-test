@@ -166,8 +166,18 @@
             <h2>🔄 Probíhá</h2>
             
             <div class="card">
-                <h3><span class="emoji">💤</span>Zatím nic...</h3>
-                <p>Všechno hotové! Co dál? 😊</p>
+                <h3><span class="emoji">🛒</span>Sales API - Databáze akcí</h3>
+                <p>API služba pro akční ceny z českých obchodů (Lidl, Penny, Billa, Kaufland). FastAPI + Cloudflare Workers + D1 Database. Scraping, fuzzy search, price history.</p>
+                <span class="tag feature">feature</span>
+                <span class="tag integration">integrace</span>
+                <div class="date">WIP od 8.2.2026</div>
+            </div>
+            
+            <div class="card">
+                <h3><span class="emoji">☁️</span>Otík Cloudflare Replicant</h3>
+                <p>Koncept hybrid edge agenta: Workers AI na edge + Tailscale tunnel na lokální OpenClaw. Self-replicating pattern inspirovaný Moltbook.</p>
+                <span class="tag feature">koncept</span>
+                <div class="date">Research 8.2.2026</div>
             </div>
         </div>
         
@@ -175,7 +185,44 @@
         <div class="column done">
             <h2>✅ Hotovo</h2>
             
-            <!-- 8.2.2026 -->
+            <!-- 8.2.2026 večer -->
+            <div class="card">
+                <h3><span class="emoji">🗣️</span>TTS Voice Fix</h3>
+                <p>Opraven preferovaný hlas pro Voice Wake: Zuzana → Jan (cs_CZ mužský Premium hlas)</p>
+                <span class="tag config">konfigurace</span>
+                <div class="date">8.2.2026 večer</div>
+            </div>
+            
+            <div class="card">
+                <h3><span class="emoji">🔑</span>GitHub Token → Bitwarden</h3>
+                <p>GitHub Personal Access Token bezpečně uložen do Bitwarden + MEMORY.md</p>
+                <span class="tag security">bezpečnost</span>
+                <div class="date">8.2.2026 večer</div>
+            </div>
+            
+            <div class="card">
+                <h3><span class="emoji">🤖</span>Qwen 2.5 14B + Model Sync</h3>
+                <p>Vyřešen incident s model sync (qwen2.5:14b timeout). Vytvořen helper script sync-ollama-models.sh pro automatickou synchronizaci Ollama modelů do OpenClaw config.</p>
+                <span class="tag feature">AI</span>
+                <span class="tag config">konfigurace</span>
+                <div class="date">8.2.2026 večer</div>
+            </div>
+            
+            <div class="card">
+                <h3><span class="emoji">🛒</span>Sales API Setup</h3>
+                <p>Vytvořen Sales API projekt (Python FastAPI + Cloudflare Workers). D1 database, schema, Wrangler deploy, cron trigger. Live: sales-api.otto-1a4.workers.dev</p>
+                <span class="tag feature">feature</span>
+                <div class="date">8.2.2026 večer</div>
+            </div>
+            
+            <div class="card">
+                <h3><span class="emoji">📚</span>Replicant Research</h3>
+                <p>Dokumentace Moltbook Replicant pattern - self-replicating agents. Vytvoření REPLICANT.md s full konceptem pro Otík Cloudflare.</p>
+                <span class="tag feature">research</span>
+                <div class="date">8.2.2026 večer</div>
+            </div>
+            
+            <!-- 8.2.2026 ráno -->
             <div class="card">
                 <h3><span class="emoji">🐦</span>X/Twitter Skill</h3>
                 <p>baoyu-post-to-x skill nainstalován, testovací tweet úspěšný</p>
