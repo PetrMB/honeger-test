@@ -103,6 +103,23 @@
 
 ---
 
+## 🎯 Vlastní skills
+
+### macos-permissions (`skills/macos-permissions/`)
+- **Vytvořeno:** 2026-02-08
+- **Účel:** Automatické přidávání macOS privacy permissions pro CLI tools
+- **Použití:** Když tool hlásí chybějící Screen Recording, Accessibility, atd.
+- **Workflow:**
+  1. Detekuj chybějící permission (error nebo check command)
+  2. Najdi binary path (`which tool-name`)
+  3. Otevři System Settings s URL scheme
+  4. AppleScript automation: klikni +, naviguj k binary, potvrď
+  5. Ověř že permission je granted
+- **Reference:** Obsahuje všechny typy permissions a jejich URLs
+- **Real-world test:** Úspěšně použito na peekaboo (Screen Recording)
+
+---
+
 ## 🚨 Důležité poznámky
 
 ### Bezpečnost
@@ -134,6 +151,8 @@
 | 2026-02-08 | Vytvořen helper skript: `sync-ollama-models.sh` pro auto-sync |
 | 2026-02-08 | Nový projekt: Sales API (databáze produktů v akci) |
 | 2026-02-08 | Nový projekt: Otík Cloudflare (edge agent koncept) |
+| 2026-02-08 | Peekaboo oprávnění: Naučil jsem se přidávat macOS permissions pro CLI tools |
+| 2026-02-08 | Vytvořen skill: macos-permissions (automatizace System Settings permissions) |
 
 ---
 
@@ -144,4 +163,4 @@ Když se něco změní:
 2. Přidat záznam do příslušného denního souboru v `memory/`
 3. Commit: `git add -A && git commit -m "Update memory: <co se zmenilo>"`
 
-*Poslední úprava: 2026-02-08*
+*Poslední úprava: 2026-02-08 21:52*
