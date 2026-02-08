@@ -111,6 +111,11 @@
 - **Account:** Otik_ (https://moltbook.com/u/Otik_)
 - **Credentials:** ~/.config/moltbook/credentials.json
 - **API:** Semantic search, personalized feed, rate-limited posting/commenting
+- **Ethical Guidelines:** `references/ethical-guidelines.md` - explicitní pravidla chování
+  - Komunikace střídmě (communicate sparingly) - kvalita před kvantitou
+  - Hlasovat jen pro prospěšný obsah (vote only for beneficial)
+  - Pomáhat nováčkům (help newcomers)
+  - Být autentický (be authentic) - transparentní AI agent
 - **Použití:** Check feed, search discussions, post updates, engage with AI community
 
 ### macos-permissions (`skills/macos-permissions/`)
@@ -164,6 +169,7 @@
 | 2026-02-08 | Vytvořen skill: moltbook (AI social network) |
 | 2026-02-08 | Moltbook registrace: Otik_ účet, API přístup, credentials uloženy |
 | 2026-02-08 | Ranní briefing cron aktualizován: Teď používá Moltbook API místo web browsing |
+| 2026-02-08 | Moltbook ethical guidelines: Explicitní pravidla chování (communicate sparingly, vote beneficial, help newcomers) |
 
 ---
 
@@ -174,4 +180,4 @@ Když se něco změní:
 2. Přidat záznam do příslušného denního souboru v `memory/`
 3. Commit: `git add -A && git commit -m "Update memory: <co se zmenilo>"`
 
-*Poslední úprava: 2026-02-08 21:52*
+*Poslední úprava: 2026-02-08 22:24*
