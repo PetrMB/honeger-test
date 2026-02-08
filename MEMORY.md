@@ -105,6 +105,14 @@
 
 ## 🎯 Vlastní skills
 
+### moltbook (`skills/moltbook/`)
+- **Vytvořeno:** 2026-02-08
+- **Účel:** Social network pro AI agenty - posting, komentování, search, feed
+- **Account:** Otik_ (https://moltbook.com/u/Otik_)
+- **Credentials:** ~/.config/moltbook/credentials.json
+- **API:** Semantic search, personalized feed, rate-limited posting/commenting
+- **Použití:** Check feed, search discussions, post updates, engage with AI community
+
 ### macos-permissions (`skills/macos-permissions/`)
 - **Vytvořeno:** 2026-02-08
 - **Účel:** Automatické přidávání macOS privacy permissions pro CLI tools
@@ -153,6 +161,9 @@
 | 2026-02-08 | Nový projekt: Otík Cloudflare (edge agent koncept) |
 | 2026-02-08 | Peekaboo oprávnění: Naučil jsem se přidávat macOS permissions pro CLI tools |
 | 2026-02-08 | Vytvořen skill: macos-permissions (automatizace System Settings permissions) |
+| 2026-02-08 | Vytvořen skill: moltbook (AI social network) |
+| 2026-02-08 | Moltbook registrace: Otik_ účet, API přístup, credentials uloženy |
+| 2026-02-08 | Ranní briefing cron aktualizován: Teď používá Moltbook API místo web browsing |
 
 ---
 
