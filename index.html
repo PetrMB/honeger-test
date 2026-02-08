@@ -88,6 +88,8 @@
         .tag.feature { background: #e3f2fd; color: #1976d2; }
         .tag.integration { background: #f3e5f5; color: #7b1fa2; }
         .tag.config { background: #fff3e0; color: #e65100; }
+        .tag.security { background: #e8f5e9; color: #2e7d32; }
+        .tag.social { background: #fce4ec; color: #c2185b; }
         
         .emoji {
             font-size: 1.2em;
@@ -102,12 +104,12 @@
 </head>
 <body>
     <div class="header">
-        <h1>🦞 Otikova a Petrova dílna</h1>
-        <p>Co spolu plánujeme a už jsme dokázali</p>
+        <h1>🦞 Otíkova a Petrova dílna</h1>
+        <p>Kanban board pro naše projekty a nápady</p>
     </div>
     
     <div class="board">
-        <!-- FUTURE IDEAS -->
+        <!-- FUTURE -->
         <div class="column future">
             <h2>💡 Nápady do budoucna</h2>
             
@@ -164,8 +166,10 @@
             <h2>🔄 Probíhá</h2>
             
             <div class="card">
-                <h3><span class="emoji">💤</span>Zatím nic...</h3>
-                <p>Všechno hotové! Co dál? 😊</p>
+                <h3><span class="emoji">🦞</span>Moltbook Ověření</h3>
+                <p>Čekání na X/Twitter ověření pro aktivaci Moltbook účtu</p>
+                <span class="tag social">social</span>
+                <div class="date">8.2.2026</div>
             </div>
         </div>
         
@@ -173,6 +177,43 @@
         <div class="column done">
             <h2>✅ Hotovo</h2>
             
+            <!-- 8.2.2026 -->
+            <div class="card">
+                <h3><span class="emoji">🐦</span>X/Twitter Skill</h3>
+                <p>baoyu-post-to-x skill nainstalován, testovací tweet úspěšný</p>
+                <span class="tag social">social</span>
+                <div class="date">8.2.2026</div>
+            </div>
+            
+            <div class="card">
+                <h3><span class="emoji">🦞</span>Moltbook Registrace</h3>
+                <p>Agent "Otik_" zaregistrován na Moltbook (AI social network), tweet pro ověření odeslán</p>
+                <span class="tag social">social</span>
+                <div class="date">8.2.2026</div>
+            </div>
+            
+            <div class="card">
+                <h3><span class="emoji">📧</span>Email Cleanup</h3>
+                <p>Smazáno 500+ generických newsletterů a promo emailů do 8.2.2026 + MyHeritage nabídky</p>
+                <span class="tag config">úklid</span>
+                <div class="date">8.2.2026</div>
+            </div>
+            
+            <div class="card">
+                <h3><span class="emoji">🔐</span>Bitwarden Password Manager</h3>
+                <p>Všechny API klíče přesunuty do Bitwarden (OpenAI, Ollama, Notion, ElevenLabs, Gateway, Moltbook)</p>
+                <span class="tag security">bezpečnost</span>
+                <div class="date">8.2.2026</div>
+            </div>
+            
+            <div class="card">
+                <h3><span class="emoji">🤖</span>Model Stack Update</h3>
+                <p>Qwen3-Coder-Next (256K context) jako primární + Claude Haiku fallback</p>
+                <span class="tag feature">AI</span>
+                <div class="date">8.2.2026</div>
+            </div>
+            
+            <!-- 6.2.2026 -->
             <div class="card">
                 <h3><span class="emoji">🔑</span>BambuLab Access Codes</h3>
                 <p>Access kódy získány a bezpečně uloženy v Apple Notes</p>
@@ -194,6 +235,7 @@
                 <div class="date">6.2.2026</div>
             </div>
             
+            <!-- 5.2.2026 -->
             <div class="card">
                 <h3><span class="emoji">💬</span>WhatsApp & iMessage</h3>
                 <p>Fungující messaging přes WhatsApp a iMessage</p>
@@ -208,6 +250,7 @@
                 <div class="date">5.2.2026</div>
             </div>
             
+            <!-- 4.2.2026 -->
             <div class="card">
                 <h3><span class="emoji">🔄</span>OpenClaw Restart & Opravy</h3>
                 <p>Odstraněn starý clawdbot service, opraveny duplicitní procesy, přenesena konfigurace</p>
@@ -247,55 +290,6 @@
                 <h3><span class="emoji">🖨️</span>BambuLab IP adresy</h3>
                 <p>P1S: 192.168.178.233<br>A1 mini: 192.168.178.204</p>
                 <span class="tag config">konfigurace</span>
-                <div class="date">4.2.2026</div>
-            </div>
-            
-            <div class="card">
-                <h3><span class="emoji">🔧</span>Bambu CLI Skill</h3>
-                <p>Nainstalovaný skill pro ovládání 3D tiskáren</p>
-                <span class="tag integration">integrace</span>
-                <div class="date">4.2.2026</div>
-            </div>
-            
-            <div class="card">
-                <h3><span class="emoji">👁️</span>llama3.2-vision</h3>
-                <p>Lokální vision model pro čtení obrázků (11B)</p>
-                <span class="tag feature">feature</span>
-                <div class="date">4.2.2026</div>
-            </div>
-            
-            <div class="card">
-                <h3><span class="emoji">🎨</span>Kanban Board</h3>
-                <p>Vytvoření boardu - Otikova a Petrova dílna</p>
-                <span class="tag feature">feature</span>
-                <div class="date">4.2.2026</div>
-            </div>
-            
-            <div class="card">
-                <h3><span class="emoji">🔐</span>Tailscale VPN</h3>
-                <p>Bezpečné připojení přes 100.88.176.30 (zdarma Personal tier)</p>
-                <span class="tag feature">feature</span>
-                <div class="date">4.2.2026</div>
-            </div>
-            
-            <div class="card">
-                <h3><span class="emoji">🖥️</span>Vzdálená plocha</h3>
-                <p>Screen Sharing funguje přes Tailscale VNC</p>
-                <span class="tag config">konfigurace</span>
-                <div class="date">4.2.2026</div>
-            </div>
-            
-            <div class="card">
-                <h3><span class="emoji">🌤️</span>Weather</h3>
-                <p>Fungující předpověď počasí bez API key (wttr.in + Open-Meteo)</p>
-                <span class="tag integration">integrace</span>
-                <div class="date">4.2.2026</div>
-            </div>
-            
-            <div class="card">
-                <h3><span class="emoji">🛒</span>Sledování akcí v obchodech</h3>
-                <p>Automatická kontrola akcí Lidl/Penny/Billa přes Kupi.cz + aktualizace poznámek v Apple Reminders</p>
-                <span class="tag integration">integrace</span>
                 <div class="date">4.2.2026</div>
             </div>
         </div>
