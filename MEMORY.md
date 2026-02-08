@@ -40,6 +40,27 @@
 
 ---
 
+## 🚀 Aktivní projekty
+
+### 1. Sales API (`projects/sales-api/`)
+- **Status:** Planning → WIP
+- **Popis:** API služba pro akční ceny produktů z českých obchodů
+- **Tech:** FastAPI/Cloudflare Workers + D1 (SQLite on edge)
+- **Features:** Fuzzy search, price history, automatické scraping
+- **Deployment:** Cloudflare Workers (serverless, free tier)
+- **Docs:** PLAN.md, CLOUDFLARE.md, TODO.md
+
+### 2. Otík Cloudflare (`projects/otik-cloudflare/`)
+- **Status:** Concept
+- **Popis:** Lightweight verze Otíka na Cloudflare edge
+- **Architektura:** Hybrid (edge inference + proxy na lokální OpenClaw)
+- **Use case:** Global availability, basic tasks na edge, složité lokálně
+- **Tech:** Workers AI (Llama 3.1 8B) + Tailscale tunnel
+- **Cost:** $0-10/měsíc (free tier likely sufficient)
+- **Docs:** CONCEPT.md
+
+---
+
 ## 🔧 Aktuální setup
 
 ### Modely
@@ -110,6 +131,8 @@
 | 2026-02-08 | Incident: Stažení qwen2.5:14b bez přidání do config → timeout/ticho |
 | 2026-02-08 | Řešení: Přidán qwen2.5:14b do config, nahradil 7B v fallback chain |
 | 2026-02-08 | Vytvořen helper skript: `sync-ollama-models.sh` pro auto-sync |
+| 2026-02-08 | Nový projekt: Sales API (databáze produktů v akci) |
+| 2026-02-08 | Nový projekt: Otík Cloudflare (edge agent koncept) |
 
 ---
 
