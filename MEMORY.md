@@ -24,7 +24,7 @@
 - **Hudba:** Apple Music (ne Spotify)
 - **Nepoužívá:** Twitter/X, Sonos
 - **Modely:** Preferuje lokální/Ollama před API
-- **TTS hlas:** Zuzana (cs_CZ)
+- **TTS hlas:** Jan (cs_CZ)
 
 ### Hardware
 - **BambuLab P1S:** 192.168.178.233 (hlavní tisk)
@@ -109,6 +109,7 @@
 - API klíče uchovávat bezpečně - necommitovat do git
 - Service account JSON pro Google Drive: `/Users/petrhoneger/Downloads/cursormac-*.json`
 - Notion token: není v gitu, nastaveno v MCP serverech
+- **GitHub token:** `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` (uloženo v Bitwarden)
 
 ### Politika kanálů
 - **WhatsApp:** allowlist only (+420731295445), self-chat mode ON

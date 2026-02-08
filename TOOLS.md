@@ -50,21 +50,21 @@ Skills are shared. Your setup is yours. Keeping them apart means you can update 
 ## Text-to-Speech (TTS)
 
 ### Voice Wake Say
-- **Preferred voice:** Zuzana (cs_CZ) - Český ženský hlas **PREMIUM** 🌟
+- **Preferred voice:** Jan (cs_CZ) - Český mužský hlas **PREMIUM** 🌟
 - **Kvalita:** Enhanced/Premium verze (stažena z System Settings)
-- **Usage:** `printf 'text' | say -v Zuzana`
+- **Usage:** `printf 'text' | say -v Jan`
 - **Rate:** Default (můžeš upravit pomocí `-r <rychlost>`)
 
 ### Available Commands
 ```bash
 # Základní použití
-printf 'Ahoj Petře!' | say -v Zuzana
+printf 'Ahoj Petře!' | say -v Jan
 
 # Rychlejší řeč
-printf 'Text' | say -v Zuzana -r 220
+printf 'Text' | say -v Jan -r 220
 
 # Pomalejší řeč
-printf 'Text' | say -v Zuzana -r 160
+printf 'Text' | say -v Jan -r 160
 ```
 
 ## Helper Scripts
