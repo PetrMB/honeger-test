@@ -1,0 +1,21 @@
+{
+  "version": 1,
+  "skills": {
+    "voice-wake-say": {
+      "version": "1.0.1",
+      "installedAt": 1770233610569
+    },
+    "sag": {
+      "version": "1.0.0",
+      "installedAt": 1770234628524
+    },
+    "gog": {
+      "version": "1.0.0",
+      "installedAt": 1770564007246
+    },
+    "baoyu-post-to-x": {
+      "version": "0.1.0",
+      "installedAt": 1770569617867
+    }
+  }
+}
