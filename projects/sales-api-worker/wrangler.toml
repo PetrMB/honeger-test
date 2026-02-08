@@ -1,0 +1,17 @@
+name = "sales-api"
+main = "src/index.js"
+compatibility_date = "2024-01-01"
+
+# D1 Database binding
+[[d1_databases]]
+binding = "DB"
+database_name = "sales-db"
+database_id = "f046ceeb-3701-4b09-9f82-591b4fa6a78f"
+
+# Cron triggers for scraping (every 6 hours)
+[triggers]
+crons = ["0 */6 * * *"]
+
+# Environment variables
+[vars]
+ENVIRONMENT = "production"

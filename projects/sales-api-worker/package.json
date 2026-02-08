@@ -1,0 +1,21 @@
+{
+  "name": "sales-api-worker",
+  "version": "1.0.0",
+  "description": "Sales API - Cloudflare Workers",
+  "main": "src/index.js",
+  "type": "module",
+  "scripts": {
+    "dev": "wrangler dev",
+    "deploy": "wrangler deploy",
+    "db:init": "wrangler d1 execute sales-db --file=./schema.sql"
+  },
+  "keywords": ["cloudflare", "workers", "sales", "api"],
+  "author": "Otík",
+  "license": "MIT",
+  "dependencies": {
+    "hono": "^4.0.0"
+  },
+  "devDependencies": {
+    "wrangler": "^4.0.0"
+  }
+}
