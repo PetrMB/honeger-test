@@ -1,11 +1,12 @@
 #!/usr/bin/env python3
 """
 Check grocery sales on Kupi.cz and update Apple Reminders notes.
-Improved version with progress output and better error handling.
+Version 2 - Using remindctl CLI instead of osascript.
 """
 
 import re
 import subprocess
+import json
 from datetime import datetime
 from difflib import SequenceMatcher
 import urllib.request
@@ -15,29 +16,71 @@ import time
 SHOPS = ["lidl", "penny-market", "billa", "kaufland"]
 
 def get_reminders():
-    """Get incomplete reminders from Nákupy list."""
+    """Get incomplete reminders from Nákupy list using remindctl."""
     print("📝 Getting reminders from Apple Reminders...")
-    result = subprocess.run(
-        ["osascript", "-e", 
-         'tell application "Reminders" to get name of reminders of list "Nákupy" whose completed is false'],
-        capture_output=True,
-        text=True,
-        timeout=30
-    )
     
-    if result.returncode != 0:
-        print(f"❌ Error getting reminders: {result.stderr}")
+    try:
+        # Try remindctl first (JSON output)
+        result = subprocess.run(
+            ["remindctl", "all", "--json"],
+            capture_output=True,
+            text=True,
+            timeout=30
+        )
+        
+        if result.returncode != 0:
+            print(f"❌ Error getting reminders: {result.stderr}")
+            return []
+        
+        # Parse JSON
+        reminders_data = json.loads(result.stdout)
+        
+        # Filter for Nákupy list and incomplete reminders
+        items = []
+        for reminder in reminders_data:
+            list_name = reminder.get('list', '')
+            completed = reminder.get('completed', False)
+            
+            # Check if list name matches Nákupy (handle encoding issues)
+            if (list_name == "Nákupy" or "kupy" in list_name.lower()) and not completed:
+                items.append(reminder.get('title', ''))
+        
+        print(f"✅ Found {len(items)} items in Nákupy list")
+        return items
+    
+    except FileNotFoundError:
+        print("❌ remindctl not found. Installing via Homebrew...")
+        # Fallback to osascript
+        return get_reminders_osascript()
+    except Exception as e:
+        print(f"❌ Error: {e}")
         return []
-    
-    # Parse comma-separated list
-    items = [item.strip() for item in result.stdout.split(',') if item.strip()]
-    print(f"✅ Found {len(items)} items in Nákupy list")
-    return items
+
+def get_reminders_osascript():
+    """Fallback using osascript."""
+    try:
+        result = subprocess.run(
+            ["osascript", "-e", 
+             'tell application "Reminders" to get name of reminders of list "Nákupy" whose completed is false'],
+            capture_output=True,
+            text=True,
+            timeout=30
+        )
+        
+        if result.returncode != 0:
+            print(f"❌ Error getting reminders: {result.stderr}")
+            return []
+        
+        items = [item.strip() for item in result.stdout.split(',') if item.strip()]
+        print(f"✅ Found {len(items)} items in Nákupy list")
+        return items
+    except Exception as e:
+        print(f"❌ Error: {e}")
+        return []
 
 def normalize_product_name(name):
     """Normalize product name for matching."""
     name_lower = name.lower()
-    # Remove common suffixes
     suffixes = [' osivo', ' sazenice', ' pytlíčky', ' granule', ' krmivo', ' stelivo']
     for suffix in suffixes:
         if name_lower.endswith(suffix):
@@ -49,10 +92,8 @@ def fuzzy_match(a, b):
     a_norm = normalize_product_name(a)
     b_norm = normalize_product_name(b).replace('-', ' ')
     
-    # Calculate base similarity
     base_score = SequenceMatcher(None, a_norm, b_norm).ratio()
     
-    # Check for stem/prefix matching
     a_words = set(a_norm.split())
     b_words = set(b_norm.split())
     
@@ -73,7 +114,6 @@ def fuzzy_match(a, b):
     if stem_match:
         return min(1.0, base_score + 0.35)
     
-    # Exact word match bonus
     common_words = a_words & b_words
     if common_words:
         boost = min(0.3, len(common_words) * 0.15)
@@ -94,7 +134,6 @@ def fetch_sales(shop):
         with urllib.request.urlopen(req, timeout=10) as response:
             html = response.read().decode('utf-8')
         
-        # Extract product links
         products = re.findall(r'/sleva/([a-z0-9-]+)', html)
         unique_products = list(set(products))
         print(f"  → Found {len(unique_products)} products")
@@ -120,7 +159,6 @@ def get_product_details(product_slug):
         shop_name = None
         validity = None
         
-        # Find first shop link
         shop_match = re.search(r'<a href="/letaky/([^"]+)"[^>]*title="([^"]+)"', html)
         if shop_match:
             shop_slug = shop_match.group(1).strip()
@@ -136,12 +174,10 @@ def get_product_details(product_slug):
             }
             shop_name = shop_map.get(shop_slug, shop_name_raw)
         
-        # Find price
         price_match = re.search(r'discount_price_value[^>]*>([0-9,]+(?:&nbsp;|\s)*Kč)', html)
         if price_match:
             price = price_match.group(1).replace('&nbsp;', ' ').strip()
         
-        # Find validity
         validity_match = re.search(r'((?:st|čt|pá|so|ne|po|út)\s+\d{1,2}\.\s*\d{1,2}\.\s*(?:&ndash;|[–-])\s*(?:st|čt|pá|so|ne|po|út)\s+\d{1,2}\.\s*\d{1,2}\.)', html)
         if validity_match:
             validity = validity_match.group(1).replace('&ndash;', '–').strip()
@@ -160,31 +196,42 @@ def get_product_details(product_slug):
         return None
 
 def update_reminder_note(reminder_name, note_text):
-    """Update notes for a reminder."""
-    safe_name = reminder_name.replace('"', '\\"')
-    safe_note = note_text.replace('"', '\\"').replace('\n', '\\n')
-    
-    script = f'''
-    tell application "Reminders"
-        set theList to list "Nákupy"
-        set theReminders to reminders of theList whose name is "{safe_name}" and completed is false
-        if (count of theReminders) > 0 then
-            set body of item 1 of theReminders to "{safe_note}"
-            return "Updated"
-        else
-            return "Not found"
-        end if
-    end tell
-    '''
-    
+    """Update notes for a reminder using remindctl."""
     try:
+        # First find the reminder ID
         result = subprocess.run(
-            ["osascript", "-e", script],
+            ["remindctl", "all", "--json"],
             capture_output=True,
             text=True,
             timeout=30
         )
+        
+        if result.returncode != 0:
+            return False
+        
+        reminders = json.loads(result.stdout)
+        reminder_id = None
+        
+        for r in reminders:
+            list_name = r.get('list', '')
+            if (list_name == "Nákupy" or "kupy" in list_name.lower()) and r.get('title') == reminder_name and not r.get('completed'):
+                reminder_id = r.get('id')
+                break
+        
+        if not reminder_id:
+            print(f"    ⚠️ Reminder '{reminder_name}' not found")
+            return False
+        
+        # Update the note using edit command
+        result = subprocess.run(
+            ["remindctl", "edit", reminder_id, "--notes", note_text],
+            capture_output=True,
+            text=True,
+            timeout=30
+        )
+        
         return result.returncode == 0
+    
     except Exception as e:
         print(f"    ❌ Error updating {reminder_name}: {e}")
         return False
@@ -192,7 +239,6 @@ def update_reminder_note(reminder_name, note_text):
 def main():
     print(f"\n🔍 Starting sales check at {datetime.now().strftime('%Y-%m-%d %H:%M')}\n")
     
-    # Get current reminders
     reminders = get_reminders()
     if not reminders:
         print("❌ No reminders found or error accessing Reminders")
@@ -202,7 +248,6 @@ def main():
     for i, item in enumerate(reminders, 1):
         print(f"  {i}. {item}")
     
-    # Collect all sales
     print(f"\n🛍️  Fetching sales from online stores...\n")
     all_sales = {}
     for shop in SHOPS:
@@ -211,22 +256,21 @@ def main():
             if product not in all_sales:
                 all_sales[product] = []
             all_sales[product].append(shop)
-        time.sleep(0.5)  # Be nice to the server
+        time.sleep(0.5)
     
     print(f"\n💰 Total products in sales: {len(all_sales)}")
     
-    # Match reminders with sales
     print(f"\n🔎 Matching your items with sales...\n")
     matches = []
     for reminder in reminders:
         best_match = None
-        best_score = 0.5  # Minimum threshold
+        best_score = 0.5
         
         candidates = []
         for product_slug in all_sales.keys():
             product_name = product_slug.replace('-', ' ')
             score = fuzzy_match(reminder, product_name)
-            if score > 0.3:  # Only show reasonable candidates
+            if score > 0.3:
                 candidates.append((product_slug, score))
         
         candidates.sort(key=lambda x: x[1], reverse=True)
@@ -245,7 +289,6 @@ def main():
             print(f"'{reminder}': ❌ No matches found")
         print()
     
-    # Update reminders with sale info
     print(f"\n📝 Updating {len(matches)} matched items...\n")
     updated = 0
     for reminder, product_slug, score in matches:
@@ -267,7 +310,7 @@ def main():
                 updated += 1
             else:
                 print(f"  ❌ Failed to update")
-        time.sleep(0.3)  # Be nice
+        time.sleep(0.3)
     
     print(f"\n✨ Done! Updated {updated}/{len(matches)} items\n")
 

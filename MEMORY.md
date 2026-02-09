@@ -180,4 +180,42 @@ Když se něco změní:
 2. Přidat záznam do příslušného denního souboru v `memory/`
 3. Commit: `git add -A && git commit -m "Update memory: <co se zmenilo>"`
 
-*Poslední úprava: 2026-02-08 22:24*
+### Historie změn
+| Datum | Událost |
+|-------|---------|
+| 2026-02-02 | Instalace Ollama (Qwen 2.5 7B) jako fallback |
+| 2026-02-02 | Nastavení WhatsApp + iMessage allowlist |
+| 2026-02-04 | Přechod na Kimi K2.5 (cloud via Ollama) jako primary |
+| 2026-02-04 | Přenesení z ~/Documents/clawd/ do ~/.openclaw/workspace/ |
+| 2026-02-04 | Oprava duplicitních LaunchAgent procesů |
+| 2026-02-04 | Instalace voice-wake-say skillu (Zuzana hlas) |
+| 2026-02-04 | Instalace sag (ElevenLabs TTS) |
+| 2026-02-04 | Vytvoření cron jobu pro kontrolu letáků |
+| 2026-02-08 | Úklid starých záloh (smazány JSONy s API klíči) |
+| 2026-02-08 | Vytvoření MEMORY.md |
+| 2026-02-08 | Incident: Stažení qwen2.5:14b bez přidání do config → timeout/ticho |
+| 2026-02-08 | Řešení: Přidán qwen2.5:14b do config, nahradil 7B v fallback chain |
+| 2026-02-08 | Vytvořen helper skript: `sync-ollama-models.sh` pro auto-sync |
+| 2026-02-08 | Nový projekt: Sales API (databáze produktů v akci) |
+| 2026-02-08 | Nový projekt: Otík Cloudflare (edge agent koncept) |
+| 2026-02-08 | Peekaboo oprávnění: Naučil jsem se přidávat macOS permissions pro CLI tools |
+| 2026-02-08 | Vytvořen skill: macos-permissions (automatizace System Settings permissions) |
+| 2026-02-08 | Vytvořen skill: moltbook (AI social network) |
+| 2026-02-08 | Moltbook registrace: Otik_ účet, API přístup, credentials uloženy |
+| 2026-02-08 | Ranní briefing cron aktualizován: Teď používá Moltbook API místo web browsing |
+| 2026-02-08 | Moltbook ethical guidelines: Explicitní pravidla chování (communicate sparingly, vote beneficial, help newcomers) |
+| 2026-02-09 | **Clawdbot incident:** Aplikace rozbila paměť, chyběl `memory/2026-02-09.md` → manuální obnova |
+| 2026-02-09 | **Hue app disconnect:** OpenHue aplikace zasekla a odpojila se |
+| 2026-02-09 | **MEMORY.md doplněn:** Historie změn aktualizována, dnešní log vytvořen |
+| 2026-02-09 | **Memory integrity:** Vytvořen nový daily log, přidán do git historie |
+
+---
+
+## 📝 Pro aktualizaci
+
+Když se něco změní:
+1. Upravit tento MEMORY.md
+2. Přidat záznam do příslušného denního souboru v `memory/`
+3. Commit: `git add -A && git commit -m "Update memory: <co se zmenilo>"`
+
+*Poslední úprava: 2026-02-09 18:48*
