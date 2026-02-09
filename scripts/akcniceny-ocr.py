@@ -160,10 +160,11 @@ def extract_deals(text):
     return unique_deals
 
 def main():
-    print("🛒 AkcniCeny.cz - OCR Scanner")
+    print("🛒 AkcniCeny.cz - OCR Scanner (všechny strany)")
     print(f"📅 {datetime.now().strftime('%A %d.%m.%Y')}\n")
     
     results = []
+    MAX_PAGES = 4  # Limit to avoid too many requests
     
     for shop_id, shop_info in SHOPS.items():
         print(f"🔍 {shop_info['name']}...")
@@ -176,25 +177,36 @@ def main():
         
         print(f"  📄 Leták ID: {leaflet_id}")
         
-        # Download first page image
-        image_data = download_leaflet_image(shop_id, leaflet_id, page=1)
-        if not image_data:
-            print(f"  ❌ Obrázek letáku není dostupný")
+        # Download multiple pages
+        all_text = ""
+        pages_found = 0
+        
+        for page in range(1, MAX_PAGES + 1):
+            image_data = download_leaflet_image(shop_id, leaflet_id, page=page)
+            if not image_data:
+                if page == 1:
+                    print(f"  ❌ Obrázek letáku není dostupný")
+                break  # No more pages
+            
+            pages_found += 1
+            print(f"  ✅ Strana {page}: {len(image_data)} bytes")
+            
+            # OCR
+            text = ocr_image(image_data)
+            if text:
+                all_text += f"\n--- Strana {page} ---\n{text}\n"
+        
+        if pages_found == 0:
+            print(f"  ❌ Žádné strany nenalezeny")
             continue
         
-        print(f"  ✅ Obrázek stažen ({len(image_data)} bytes)")
+        print(f"  📄 Zpracováno {pages_found} stran")
         
-        # OCR
-        text = ocr_image(image_data)
-        if not text:
-            print(f"  ❌ OCR selhalo")
-            continue
-        
-        # Extract deals
-        deals = extract_deals(text)
+        # Extract deals from all pages combined
+        deals = extract_deals(all_text)
         if deals:
-            results.append((shop_info['name'], deals))
-            print(f"  ✅ {len(deals)} produktů nalezeno")
+            results.append((shop_info['name'], deals, pages_found))
+            print(f"  ✅ Celkem {len(deals)} unikátních produktů")
         else:
             print(f"  ⚠️ Žádné produkty extrahovány")
     
@@ -206,15 +218,20 @@ def main():
         ""
     ]
     
-    for shop_name, deals in results:
-        lines.append(f"🏪 {shop_name}:")
+    for shop_name, deals, pages_found in results:
+        lines.append(f"🏪 {shop_name} ({pages_found} str.):")
         for i, d in enumerate(deals, 1):
             lines.append(f"  {i}. {d['product']} - {d['price']}")
         lines.append("")
     
+    total_products = sum(len(deals) for _, deals, _ in results)
+    total_pages = sum(pages for _, _, pages in results)
+    
     if not results:
         lines.append("⚠️ Žádné letáky nenalezeny nebo OCR selhalo")
         lines.append("💡 Zkus navštívit akcniceny.cz přímo")
+    else:
+        lines.append(f"📊 Celkem: {total_products} produktů z {total_pages} stran letáků")
     
     output = '\n'.join(lines)
     print("\n" + output)
