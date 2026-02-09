@@ -208,6 +208,7 @@ Když se něco změní:
 | 2026-02-09 | **Hue app disconnect:** OpenHue aplikace zasekla a odpojila se |
 | 2026-02-09 | **MEMORY.md doplněn:** Historie změn aktualizována, dnešní log vytvořen |
 | 2026-02-09 | **Memory integrity:** Vytvořen nový daily log, přidán do git historie |
+| 2026-02-09 | **Otta Kanban:** GitHub Pages aktualizován s timestamp |
 
 ---
 

@@ -1,5 +1,10 @@
 # HEARTBEAT.md
 
-# Keep this file empty (or with only comments) to skip heartbeat API calls.
+# Kontrola letáků (OCR-based bypass Reminders)
+# Run: nightly at 00:05
 
-# Add tasks below when you want the agent to check something periodically.
+# Tasks:
+# 1. Check for new leaflets on akcniceny.cz
+# 2. Run OCR on images
+# 3. Update reminders DB (if permission available)
+# 4. Send summary to iMessage
