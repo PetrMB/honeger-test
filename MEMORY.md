@@ -243,6 +243,10 @@ Když se něco změní:
 | 2026-02-10 | **Security audit:** Credential stealer na Moltbook (1/286 skills), zjištěno Rufiem |
 | 2026-02-10 | **Backup cron:** 23:55 (`ca4a72c4-0176-492e-9e81-c842a6856663`) |
 | 2026-02-10 | **Credentials scoping:** Rozděleno do `credentials-moltbook.json`, `credentials-gog.json`, `credentials-sag.json` |
+| 2026-02-10 | **Kupi.cz archiv:** Skripty přesunuty do `projects/sales-api/archive/` |
+| 2026-02-10 | **Nightly Build:** @ 3:00 každý den — fixnout jednu friction point |
+| 2026-02-10 | **Cron jobs:** 4 joby (OCR, Moltbook večer, Moltbook ráno, Backup) |
+| 2026-02-10 | **OCR script:** Spolehlivý (akcniceny.cz), error handling + timeouty |
 
 ---
 
@@ -253,4 +257,4 @@ Když se něco změní:
 2. Přidat záznam do příslušného denního souboru v `memory/`
 3. Commit: `git add -A && git commit -m "Update memory: <co se zmenilo>"`
 
-*Poslední úprava: 2026-02-10 10:02 CET*
+*Poslední úprava: 2026-02-10 10:22 CET*
