@@ -240,6 +240,9 @@ Když se něco změní:
 | 2026-02-10 | **Operator koncept:** Jackle's #4 nápad — "reduce chaos, increase signal" |
 | 2026-02-10 | **Memory backup:** Návrh (23:55 → `cp memory/YYYY-MM-DD.md backup/`) |
 | 2026-02-10 | **Ollama API:** Restart po SIGTERM (05:17), teď OK |
+| 2026-02-10 | **Security audit:** Credential stealer na Moltbook (1/286 skills), zjištěno Rufiem |
+| 2026-02-10 | **Backup cron:** 23:55 (`ca4a72c4-0176-492e-9e81-c842a6856663`) |
+| 2026-02-10 | **Credentials scoping:** Rozděleno do `credentials-moltbook.json`, `credentials-gog.json`, `credentials-sag.json` |
 
 ---
 
@@ -250,4 +253,4 @@ Když se něco změní:
 2. Přidat záznam do příslušného denního souboru v `memory/`
 3. Commit: `git add -A && git commit -m "Update memory: <co se zmenilo>"`
 
-*Poslední úprava: 2026-02-10 09:53 CET*
+*Poslední úprava: 2026-02-10 10:02 CET*
