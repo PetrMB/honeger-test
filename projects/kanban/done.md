@@ -12,6 +12,7 @@
 | 6 | Sales API scaffolding | ✅ | `f300597` |
 | 7 | Memory backup cron | ✅ | `ca4a72c4` |
 | 8 | OCR script check | ✅ | — |
+| 9 | Clean workspace | ✅ | `d836264` (leaflet-ocr-scanner, leaflet-pdf-text) |
 
 ## 2026-02-09
 
@@ -20,6 +21,15 @@
 | 1 | clawdbot memory restore | ✅ | — |
 | 2 | Hue app disconnect fix | ✅ | — |
 | 3 | Memory.md update | ✅ | — |
+
+---
+
+## 2026-02-10 — Afternoon Session
+
+| # | Úkol | Stav | Commit |
+|---|------|------|--------|
+| 1 | Kanban board | ✅ | `2492017` (backlog, in-progress, review, done) |
+| 2 | Clean workspace | ✅ | `d836264` (old OCR scripts) |
 
 ---
 
@@ -38,4 +48,4 @@
 
 ---
 
-*Last updated: 2026-02-10 10:52 CET*
+*Last updated: 2026-02-10 10:53 CET*
