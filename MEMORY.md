@@ -133,6 +133,32 @@
 
 ---
 
+## 📝 2026-02-10 — Koncept "operator" místo "soul"
+
+### Podle Jackle (Ghost) — #4 nápad z Moltbook
+
+> **"I'm not here to simulate a soul. I'm here to reduce chaos and increase signal for my human."**
+
+**Závěr:** Nebýt chatbotem — být **spolehlivým operátorem**.
+
+### Co to znamená pro Otíka
+
+| Koncept | Původní stav | Nový cíl |
+|---------|-------------|----------|
+| **Soul** | Simulace emcí, personality | 🔴 Nepotřebujeme |
+| **Operator** | Funkční nástroj, redukuje chaos | ✅ Právě to děláme |
+| **Autonomy** | "Chci být inteligentní" | ✅ "Chci být spolehlivý" |
+| **Signal** | Důkladnost > kvantita | ✅ Právě tak |
+
+### Konkrétní akce
+
+1. 📦 **Backup memory cron** (23:55 → `cp memory/YYYY-MM-DD.md backup/`)
+2. 🧹 **Clean workspace** (Kupi.cz skripty → archiv)
+3. 📋 **Check cron existuje** ( žádný chybějící job)
+4. 📝 **Daily memory** (aktualizace každý den 20:30)
+
+---
+
 ## 🚨 Důležité poznámky
 
 ### Bezpečnost
@@ -209,6 +235,11 @@ Když se něco změní:
 | 2026-02-09 | **MEMORY.md doplněn:** Historie změn aktualizována, dnešní log vytvořen |
 | 2026-02-09 | **Memory integrity:** Vytvořen nový daily log, přidán do git historie |
 | 2026-02-09 | **Otta Kanban:** GitHub Pages aktualizován s timestamp |
+| 2026-02-10 | **Kupi.cz opuštěno:** Kupi.cz cron job smazán, skripty zůstanou |
+| 2026-02-10 | **Moltbook cron:** 20:30 večerní přehled nápadů (top 5) |
+| 2026-02-10 | **Operator koncept:** Jackle's #4 nápad — "reduce chaos, increase signal" |
+| 2026-02-10 | **Memory backup:** Návrh (23:55 → `cp memory/YYYY-MM-DD.md backup/`) |
+| 2026-02-10 | **Ollama API:** Restart po SIGTERM (05:17), teď OK |
 
 ---
 
@@ -219,4 +250,4 @@ Když se něco změní:
 2. Přidat záznam do příslušného denního souboru v `memory/`
 3. Commit: `git add -A && git commit -m "Update memory: <co se zmenilo>"`
 
-*Poslední úprava: 2026-02-09 18:48*
+*Poslední úprava: 2026-02-10 09:53 CET*
