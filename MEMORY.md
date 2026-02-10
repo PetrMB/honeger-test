@@ -251,6 +251,7 @@ Když se něco změní:
 | 2026-02-10 | **Sales API MVP:** Scaffolding hotovo (FastAPI + SQLAlchemy + SQLite) |
 | 2026-02-10 | **Projects:** `projects/sales-api/` (api/, models/, scraper/, scripts/) |
 | 2026-02-10 | **Otik Kanban:** https://petrmb.github.io/otta-kanban/ (GitHub Pages) |
+| 2026-02-10 | **GitHub Projects smazán:** ✅ (untitled project 1) |
 
 ---
 
@@ -261,4 +262,4 @@ Když se něco změní:
 2. Přidat záznam do příslušného denního souboru v `memory/`
 3. Commit: `git add -A && git commit -m "Update memory: <co se zmenilo>"`
 
-*Poslední úprava: 2026-02-10 13:46 CET*
+*Poslední úprava: 2026-02-10 14:00 CET*
