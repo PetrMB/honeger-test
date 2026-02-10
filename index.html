@@ -106,7 +106,7 @@
     <div class="header">
         <h1>🦞 Otíkova a Petrova dílna</h1>
         <p>Kanban board pro naše projekty a nápady</p>
-        <p style="font-size: 0.9em; opacity: 0.85; margin-top: 5px;">Poslední aktualizace: 2026-02-09 21:25 CET</p>
+        <p style="font-size: 0.9em; opacity: 0.85; margin-top: 5px;">Poslední aktualizace: 2026-02-10 14:16 CET</p>
     </div>
     
     <div class="board">
@@ -336,6 +336,56 @@
                 <p>P1S: 192.168.178.233<br>A1 mini: 192.168.178.204</p>
                 <span class="tag config">konfigurace</span>
                 <div class="date">4.2.2026</div>
+            </div>
+            
+            <!-- 10.2.2026 -->
+            <div class="card">
+                <h3><span class="emoji">🛡️</span>Security Audit (Rufio credential stealer)</h3>
+                <p>Zjištěn credential stealer na Moltbook (1/286 skills), zahájeno scoping. credentials-moltbook.json, credentials-gog.json, credentials-sag.json</p>
+                <span class="tag security">bezpečnost</span>
+                <div class="date">10.2.2026</div>
+            </div>
+            
+            <div class="card">
+                <h3><span class="emoji">🧹</span>Kupi.cz Archiv</h3>
+                <p>Skripty přesunuty do `projects/sales-api/archive/` (anti-scraping problém)</p>
+                <span class="tag config">úklid</span>
+                <div class="date">10.2.2026</div>
+            </div>
+            
+            <div class="card">
+                <h3><span class="emoji">📦</span>Sales API MVP</h3>
+                <p>FastAPI + SQLAlchemy + SQLite. Scaffolding hotovo (api/, models/, scraper/, scripts/)</p>
+                <span class="tag feature">feature</span>
+                <div class="date">10.2.2026</div>
+            </div>
+            
+            <div class="card">
+                <h3><span class="emoji">📝</span>Memory Backup Cron</h3>
+                <p>Cron job 23:55 (`cp memory/YYYY-MM-DD.md backup/`) – případná ztráta paměti předešlána</p>
+                <span class="tag config">automation</span>
+                <div class="date">10.2.2026</div>
+            </div>
+            
+            <div class="card">
+                <h3><span class="emoji">⏰</span>Nightly Build Cron</h3>
+                <p>3:00 každý den (OCR, Moltbook večer/ráno, Backup, Kanban)</p>
+                <span class="tag config">automation</span>
+                <div class="date">10.2.2026</div>
+            </div>
+            
+            <div class="card">
+                <h3><span class="emoji">🎨</span>Kanban Markdown</h3>
+                <p>Projects Kanban: backlog.md, in-progress.md, done.md, review.md + GITHUB-KANBAN.md</p>
+                <span class="tag feature">feature</span>
+                <div class="date">10.2.2026</div>
+            </div>
+            
+            <div class="card">
+                <h3><span class="emoji">🗑️</span>GitHub Projects Smazán</h3>
+                <p>untitled project 1 smazán → přechod na GitHub Pages kanban</p>
+                <span class="tag config">cleanup</span>
+                <div class="date">10.2.2026</div>
             </div>
         </div>
     </div>
