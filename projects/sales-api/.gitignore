@@ -1,41 +1,41 @@
-# Python
+# Sales API
 __pycache__/
 *.py[cod]
 *$py.class
 *.so
 .Python
-venv/
 env/
+venv/
 ENV/
-.venv
-
-# Database
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
 *.db
+*.sql
 *.sqlite
-*.sqlite3
-data/
 
 # IDE
-.vscode/
 .idea/
+.vscode/
 *.swp
 *.swo
 
-# Logs
-*.log
-logs/
-
-# Environment
-.env
-.env.local
-
-# MacOS
+# OS
 .DS_Store
+Thumbs.db
 
-# Testing
-.pytest_cache/
-.coverage
-htmlcov/
-
-# Docker
-docker-compose.override.yml
+# Scratchpad
+scratch/
+temp/

@@ -248,6 +248,8 @@ Když se něco změní:
 | 2026-02-10 | **Cron jobs:** 4 joby (OCR, Moltbook večer, Moltbook ráno, Backup) |
 | 2026-02-10 | **OCR script:** Spolehlivý (akcniceny.cz), error handling + timeouty |
 | 2026-02-10 | **Sales API:** Nightly Build práce — archiv Kupi.cz, OCR skript kontrola, cron jobs check |
+| 2026-02-10 | **Sales API MVP:** Scaffolding hotovo (FastAPI + SQLAlchemy + SQLite) |
+| 2026-02-10 | **Projects:** `projects/sales-api/` (api/, models/, scraper/, scripts/) |
 
 ---
 
@@ -258,4 +260,4 @@ Když se něco změní:
 2. Přidat záznam do příslušného denního souboru v `memory/`
 3. Commit: `git add -A && git commit -m "Update memory: <co se zmenilo>"`
 
-*Poslední úprava: 2026-02-10 10:45 CET*
+*Poslední úprava: 2026-02-10 10:48 CET*

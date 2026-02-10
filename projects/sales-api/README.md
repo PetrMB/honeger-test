@@ -1,54 +1,84 @@
 # 🛒 Sales API
 
-**Databázová služba pro produkty v akci z českých obchodních řetězců**
+Veřejná API služba poskytující aktuální ceny produktů v akcích z českých řetězců.
 
-## Status: 📋 Planning
+## 🚀 Status
 
-Služba pro sledování a vyhledávání akčních cen produktů z:
-- Lidl
-- Penny Market  
-- Billa
-- Kaufland
+**MVP** — vývoj v progressu
 
-## Quick Links
-
-- 📋 **[PLAN.md](./PLAN.md)** - Kompletní plán implementace
-- 🚀 **Tech Stack:** FastAPI + PostgreSQL + APScheduler
-- 📊 **Data Source:** Kupi.cz scraping
-
-## Features (Planned)
-
-- ✅ Fuzzy search produktů
-- ✅ Aktuální ceny a platnosti
-- ✅ REST API
-- 🔜 Price history tracking
-- 🔜 Watchlisty + notifikace
-- 🔜 Kategorizace produktů
-
-## Development
+## 📦 Instalace
 
 ```bash
-# Setup (když bude ready)
 cd projects/sales-api
-python -m venv venv
-source venv/bin/activate
 pip install -r requirements.txt
-
-# Run
-python -m uvicorn main:app --reload
 ```
 
-## API Preview
+## 🛠️ Použití
+
+### 1. Inicializace databáze
+
+```bash
+python scripts/init_db.py
+```
+
+### 2. Skenování letáků
+
+```bash
+# ručně
+python scripts/scan_sales.py
+
+# nebo pomocí scheduleru
+python scraper/scheduler.py
+```
+
+### 3. Spuštění API serveru
+
+```bash
+uvicorn api.main:app --reload --host 0.0.0.0 --port 8000
+```
+
+### 4. API endpoints
+
+- `GET /api/products/search?q=mleko` — vyhledávání
+- `GET /api/shops` — seznam obchodů
+- `GET /api/stats` — statistiky
+- `GET /health` — health check
+
+## 📊 Data zdroje
+
+- **akcniceny.cz** — OCR letáků (Lidl, Penny, Billa, Kaufland)
+- **Scraping** — každých 6 hodin automaticky
+
+## 🔐 Legální poznámky
+
+- Respektovat robots.txt
+- Rate limiting (být "nice" k serveru)
+- Nezveřejňovat obrázky (copyright)
+- Attribution na zdrojové stránky
+
+## 📝 Vývoj
+
+### Structure
 
 ```
-GET /api/products/search?q=mleko
-GET /api/products/{id}
-GET /api/shops/{shop}/sales
-GET /api/sales/recent
+sales-api/
+├── api/              # FastAPI endpoints
+├── models/           # SQLAlchemy models
+├── scraper/          # Scraping worker
+├── scripts/          # Database/seed scripts
+└── tests/            # Test suite
 ```
+
+### Roadmap
+
+- [x] Base structure
+- [ ] Fuzzy search
+- [ ] Full scraping pipeline
+- [ ] Database integration
+- [ ] Tests
+- [ ] Deployment (Fly.io/Cloudflare)
 
 ---
 
-**Autor:** Otík 🦉  
-**Vytvořeno:** 2026-02-08  
-**Implementace:** WIP (work in progress během heartbeatů)
+**Author:** Otík  
+**License:** MIT ( TBD )

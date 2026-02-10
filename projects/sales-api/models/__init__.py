@@ -1,8 +1,5 @@
-"""Database models"""
-from .base import Base
-from .shop import Shop
-from .product import Product
-from .sale import Sale
-from .price_history import PriceHistory
+"""Sales API models package."""
 
-__all__ = ["Base", "Shop", "Product", "Sale", "PriceHistory"]
+from models.database import Base, Product, Shop, Sale, PriceHistory
+
+__all__ = ["Base", "Product", "Shop", "Sale", "PriceHistory"]
