@@ -250,6 +250,7 @@ Když se něco změní:
 | 2026-02-10 | **Sales API:** Nightly Build práce — archiv Kupi.cz, OCR skript kontrola, cron jobs check |
 | 2026-02-10 | **Sales API MVP:** Scaffolding hotovo (FastAPI + SQLAlchemy + SQLite) |
 | 2026-02-10 | **Projects:** `projects/sales-api/` (api/, models/, scraper/, scripts/) |
+| 2026-02-10 | **GitHub Kanban:** https://github.com/users/PetrMB/projects/1 (připraven včera) |
 
 ---
 
@@ -260,4 +261,4 @@ Když se něco změní:
 2. Přidat záznam do příslušného denního souboru v `memory/`
 3. Commit: `git add -A && git commit -m "Update memory: <co se zmenilo>"`
 
-*Poslední úprava: 2026-02-10 10:48 CET*
+*Poslední úprava: 2026-02-10 13:26 CET*
