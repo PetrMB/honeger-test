@@ -30,6 +30,7 @@
 |---|------|------|--------|
 | 1 | Kanban board | ✅ | `2492017` (backlog, in-progress, review, done) |
 | 2 | Clean workspace | ✅ | `d836264` (old OCR scripts) |
+| 3 | GitHub Kanban guide | ✅ | `69c4b68` (GITHUB-KANBAN.md) |
 
 ---
 
@@ -48,4 +49,4 @@
 
 ---
 
-*Last updated: 2026-02-10 10:53 CET*
+*Last updated: 2026-02-10 11:05 CET*
