@@ -1,0 +1,5 @@
+#!/bin/bash
+# tts-qwen3 — Qwen3-TTS wrapper for OpenClaw
+# Usage: tts-qwen3 "text" | tts-qwen3 -f file.txt
+
+exec ~/.openclaw/workspace/scripts/tts-qwen3.sh "$@"
