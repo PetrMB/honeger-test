@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test App</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 100px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            min-height: 100vh;
+            margin: 0;
+        }
+        h1 { font-size: 3rem; margin-bottom: 20px; }
+        p { font-size: 1.3rem; }
+        .emoji { font-size: 5rem; }
+    </style>
+</head>
+<body>
+    <div class="emoji">🎉</div>
+    <h1>Honeger.com funguje!</h1>
+    <p>Moje první automaticky deploynutá aplikace</p>
+    <p id="time"></p>
+    <script>
+        document.getElementById('time').textContent =
+            'Vytvořeno: ' + new Date().toLocaleString('cs-CZ');
+    </script>
+</body>
+</html>
