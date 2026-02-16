@@ -47,15 +47,25 @@ OUTPUT_FILE="${OUTPUT_DIR}/${OUTPUT_PREFIX}-${TIMESTAMP}-${VOICE}.mp3"
 # Log
 echo "[$(date)] tts-qwen3.sh: voice=$VOICE, speed=$SPEED" >> "$LOG_FILE"
 
-# Check if Qwen3-TTS server is running
-if curl -s http://localhost:11435 > /dev/null 2>&1; then
-    echo "[$(date)] tts-qwen3.sh: Qwen3-TTS API found" >> "$LOG_FILE"
-    # TODO: Qwen3-TTS API call
-else
-    echo "[$(date)] tts-qwen3.sh: No Qwen3-TTS, using macOS TTS (say -v Jan)" >> "$LOG_FILE"
-    # Fallback: macOS TTS
-    printf "%s" "$TEXT" | say -v Jan -r $(echo "$SPEED * 200" | bc | sed 's/\..*//') -o "$OUTPUT_FILE"
+# Try Qwen3-TTS Python wrapper (venv)
+VENV_PATH="$HOME/.openclaw/workspace/venv-qwen-tts"
+PYTHON_WRAPPER="$HOME/.openclaw/workspace/scripts/tts-qwen3.py"
+
+if [ -f "$VENV_PATH/bin/python3" ] && [ -f "$PYTHON_WRAPPER" ]; then
+    echo "[$(date)] tts-qwen3.sh: Using Qwen3-TTS Python wrapper" >> "$LOG_FILE"
+    OUTPUT=$("$VENV_PATH/bin/python3" "$PYTHON_WRAPPER" "$TEXT" --model base 2>&1)
+    if echo "$OUTPUT" | grep -q "MEDIA:"; then
+        echo "$OUTPUT"
+        exit 0
+    else
+        echo "[$(date)] tts-qwen3.sh: Qwen3-TTS failed, fallback to macOS say" >> "$LOG_FILE"
+    fi
 fi
+
+# Fallback: macOS TTS
+MACOS_VOICE="${VOICE:-Zuzana (Premium)}"
+echo "[$(date)] tts-qwen3.sh: Using macOS TTS (say -v '$MACOS_VOICE')" >> "$LOG_FILE"
+printf "%s" "$TEXT" | say -v "$MACOS_VOICE" -r $(echo "$SPEED * 200" | bc | sed 's/\..*//') -o "$OUTPUT_FILE"
 
 # Output result for OpenClaw
 if [ -f "$OUTPUT_FILE" ]; then
