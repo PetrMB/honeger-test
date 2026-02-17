@@ -1,0 +1,8 @@
+{
+  "name": "cloudflare-pages-deploy",
+  "version": "1.0.0",
+  "description": "Cloudflare Pages deployment best practices",
+  "openclaw": {
+    "author": "Otík"
+  }
+}

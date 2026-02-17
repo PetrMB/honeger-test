@@ -1,0 +1,54 @@
+{
+  "generated": "2026-02-17T08:00:00+01:00",
+  "count": 6,
+  "deals": [
+    {
+      "title": "Coshida stelivo",
+      "price": "49,90",
+      "amount": "6 l",
+      "store": "Lidl",
+      "validity": "čt 19. 2. – ne 22. 2.",
+      "id": "coshida-stelivo"
+    },
+    {
+      "title": "Kiwi",
+      "price": "6,90",
+      "amount": "1 ks",
+      "store": "Albert hypermarket",
+      "validity": "st 18. 2. – út 24. 2.",
+      "id": "kiwi"
+    },
+    {
+      "title": "Okurka salátová - hadovka",
+      "price": "16,90",
+      "amount": "1 ks",
+      "store": "Penny Market",
+      "validity": "pá 20. 2. – ne 22. 2.",
+      "id": "okurka-hadovka"
+    },
+    {
+      "title": "Madlenky",
+      "price": "39,90",
+      "amount": "0.175 kg",
+      "store": "Košík.cz",
+      "validity": "aktuální",
+      "id": "madlenky"
+    },
+    {
+      "title": "Krokety",
+      "price": "29,90",
+      "amount": "300 g",
+      "store": "Albert hypermarket",
+      "validity": "dnes končí!",
+      "id": "krokety"
+    },
+    {
+      "title": "Sůl do myčky Finish",
+      "price": "49,90",
+      "amount": "1.5 kg",
+      "store": "Šlak drogerie",
+      "validity": "platí do soboty 21. 2.",
+      "id": "finish-sol"
+    }
+  ]
+}

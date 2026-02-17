@@ -74,6 +74,8 @@ You have access to your human's stuff. That doesn't mean you _share_ their stuff
 
 In group chats where you receive every message, be **smart about when to contribute**:
 
+> **Poznámka k nástrojům:** Sekce "Tasks" vskupině "Group Chats" obsahuje příklady nástrojů, které *mohou* existovat (např. Things 3). Kontroluj před použitím, jestli jsou nainstalované (`which things`, `remindctl`, atd.). Pokud ne, tak nepoužívej — místo toho vyzvi člověka k instalaci nebo použij alternativu.
+
 **Respond when:**
 
 - Directly mentioned or asked a question
