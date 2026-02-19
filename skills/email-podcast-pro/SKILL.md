@@ -53,7 +53,7 @@ Vytvoř `~/.config/email-podcast-pro/config.json`:
 
 ## 🚀 Jak používat
 
-### 1. Základní spuštění (všechny nečtené emaily)
+### 1. Základní spuštění (nové emaily za posledních 24 hodin)
 
 ```bash
 email-podcast-pro
@@ -65,10 +65,10 @@ email-podcast-pro
 email-podcast-pro --id <email-id>
 ```
 
-### 3. Emaily za posledních N dní
+### 3. Emaily za posledních N hodin
 
 ```bash
-email-podcast-pro --days 3
+email-podcast-pro --hours 12
 ```
 
 ---
@@ -103,8 +103,8 @@ Každý podcast dostane:
 ## 🔄 Cron Job (Automatické spuštění)
 
 ```bash
-# Každé ráno v 8:00 (kdy spíš spíš)
-0 8 * * * cd ~/.openclaw/workspace && ./skills/email-podcast-pro/script/email-to-podcast.sh --auto 2>&1 >> /tmp/email-podcast.log
+# Každé ráno v 8:00 (nové emaily od včerejška)
+0 8 * * * cd ~/.openclaw/workspace && ./skills/email-podcast-pro/script/email-to-podcast.sh 2>&1 >> /tmp/email-podcast.log
 ```
 
 ---
@@ -120,8 +120,8 @@ himalaya list inbox --limit 10
 # Přečíst email
 himalaya read <id>
 
-# Vyhledat emaily
-himalaya search --from "petr" --subject "důležité"
+# Vyhledat emaily za posledních 24h
+himalaya search --in "inbox" --after (date -v-24H '+%Y-%m-%d')
 ```
 
 ### macOS say parametry
@@ -145,8 +145,16 @@ say -v "Jan" -r 160
 |---------|--------|
 | `himalaya: command not found` | `brew install himalaya` + přihlášení |
 | `No Zuzana voice` | Stáhni premium verzi v System Settings → Accessibility → Spoken Content → Manage Voices |
-| `No email found` | Zkontroluj `himalaya list inbox` |
+| `No email found` | Zkontroluj `himalaya list inbox` (default: posledních 24h) |
 | `Audio file empty` | Zkontroluj `say -v "Zuzana" "test"` |
+
+---
+
+## 🆕 Pro nové uživatele
+
+**Základní spuštění:** `email-podcast-pro`
+
+Čeká se na nové emaily za posledních **24 hodin** → každé ráno v 8:00 nové emaily z noci.
 
 ---
 

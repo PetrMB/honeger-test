@@ -1,6 +1,6 @@
 #!/bin/bash
 # email-to-podcast.sh — Convert selected emails to podcast (Zuzana Premium)
-# Usage: ./email-to-podcast.sh [--auto|--days N|--id <id>]
+# Usage: ./email-to-podcast.sh [--auto|--hours N|--id <id>]
 
 set -e
 
@@ -16,11 +16,12 @@ OUTPUT_DIR="${HOME}/Music/Podcasts/Emaily"
 VOICE="Zuzana"
 RATE=150
 FORMAT="mp3"
+HOURS=24
 
 # Parse args
 AUTO=false
-DAYS=7
 EMAIL_ID=""
+HOURS="--hours 24" # default
 
 while [[ $# -gt 0 ]]; do
     case $1 in
@@ -28,8 +29,8 @@ while [[ $# -gt 0 ]]; do
             AUTO=true
             shift
             ;;
-        --days)
-            DAYS="$2"
+        --hours)
+            HOURS="$2"
             shift 2
             ;;
         --id)
@@ -37,7 +38,7 @@ while [[ $# -gt 0 ]]; do
             shift 2
             ;;
         *)
-            echo "Usage: $0 [--auto|--days N|--id <id>]"
+            echo "Usage: $0 [--auto|--hours N|--id <id>]"
             exit 1
             ;;
     esac
@@ -117,8 +118,8 @@ if [ -n "$EMAIL_ID" ]; then
     echo "📄 Reading specific email: $EMAIL_ID"
     EMAILS_JSON=$(himalaya read "$EMAIL_ID" --raw 2>/dev/null)
 else
-    echo "📅 Getting emails from last $DAYS days..."
-    EMAILS_JSON=$(himalaya list inbox --limit 100 --json 2>/dev/null | jq -c --arg days "$DAYS" '[.[] | select(.received > (now - ($days |tonumber | . * 86400)))]')
+    echo "📅 Getting emails from last $HOURS hours..."
+    EMAILS_JSON=$(himalaya list inbox --limit 100 --json 2>/dev/null | jq -c --arg hours "$HOURS" '[.[] | select(.received > (now - ($hours |tonumber | . * 3600)))]')
 fi
 
 # Process emails
@@ -133,7 +134,7 @@ if [ -n "$EMAIL_ID" ]; then
     EMAIL_LIST=(1)
 else
     EMAIL_COUNT=$(echo "$EMAILS_JSON" | jq 'length')
-    echo "   Found $EMAIL_COUNT emails in last $DAYS days"
+    echo "   Found $EMAIL_COUNT emails in last $HOURS hours"
     EMAIL_LIST=$(echo "$EMAILS_JSON" | jq -c '.[]')
 fi
 
