@@ -1,0 +1,43 @@
+{
+  "memory": {
+    "backend": "qmd",
+    "citations": "auto",
+    "qmd": {
+      "command": "qmd",
+      "searchMode": "search",
+      "includeDefaultMemory": true,
+      "paths": [
+        {
+          "name": "memory",
+          "path": "memory",
+          "pattern": "**/*.md"
+        }
+      ],
+      "sessions": {
+        "enabled": false
+      },
+      "update": {
+        "interval": "5m",
+        "debounceMs": 15000,
+        "onBoot": true,
+        "waitForBootSync": false,
+        "embedInterval": "1h",
+        "commandTimeoutMs": 30000,
+        "updateTimeoutMs": 60000,
+        "embedTimeoutMs": 300000
+      },
+      "limits": {
+        "maxResults": 6,
+        "maxSnippetChars": 1000,
+        "maxInjectedChars": 4000,
+        "timeoutMs": 4000
+      },
+      "scope": {
+        "default": "deny",
+        "rules": [
+          { "action": "allow", "match": { "chatType": "direct" } }
+        ]
+      }
+    }
+  }
+}
