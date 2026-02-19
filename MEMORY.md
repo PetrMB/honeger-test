@@ -255,7 +255,7 @@ Billa: 2 produkty (Majonéza - 100g, k U=5986KÉ -I 11) — částečně OCR
 - API klíče uchovávat bezpečně - necommitovat do git
 - Service account JSON pro Google Drive: `/Users/petrhoneger/Downloads/cursormac-*.json`
 - Notion token: není v gitu, nastaveno v MCP serverech
-- **GitHub token:** `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` (uloženo v Bitwarden)
+- **GitHub token:** už není v gitu (uloženo v Bitwarden)
 
 ### Politika kanálů
 - **WhatsApp:** allowlist only (+420731295445), self-chat mode ON
