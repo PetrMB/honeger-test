@@ -1,0 +1,14 @@
+{
+  "filter": {
+    "minWords": 500,
+    "excludeKeywords": ["sleva", "akce", "kupón", "předplatné", "nabídka", "speciální", "výprodej"],
+    "excludeFrom": ["info@", "newsletter@", "noreply@", "auto@"]
+  },
+  "output": {
+    "format": "mp3",
+    "bitrate": "128k",
+    "voice": "Zuzana",
+    "rate": 150,
+    "directory": "~/Music/Podcasts/Emaily"
+  }
+}
