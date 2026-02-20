@@ -35,18 +35,46 @@
 
 ## ✅ Hotovo
 
+### 2026-02-20
+
+| # | Úkol | Typ | Datum |
+|---|------|-----|-------|
+| 1 | Ranní briefing (OpenClaw + Moltbook) | automation | 20.2.2026 |
+| 2 | OCR letáky (Penny 3, Lidl 6) | cron | 20.2.2026 |
+| 3 | Reminders sync (Coshida, Tampony, Karafa, Tento) | automation | 20.2.2026 |
+| 4 | TTS odpovědi na iMessage | integration | 20.2.2026 |
+
+### 2026-02-19
+
+| # | Úkol | Typ | Datum |
+|---|------|-----|-------|
+| 1 | QMD memory system (Ray Fernando) | research | 19.2.2026 |
+| 2 | Daily log created | documentation | 19.2.2026 |
+| 3 | Backup fallback (`2026-02-18.md`) | backup | 19.2.2026 |
+
+### 2026-02-17
+
+| # | Úkol | Typ | Datum |
+|---|------|-----|-------|
+| 1 | Things 3 poznámka (AGENTS.md) | docs | 17.2.2026 |
+| 2 | Nákupní sync + OCR letáky | automation | 17.2.2026 |
+| 3 | shopping-deals.py + update-reminders.py | scripts | 17.2.2026 |
+| 4 | Fuzzy search v reminderech | feature | 17.2.2026 |
+
+### 2026-02-10
+
 | # | Úkol | Typ | Datum |
 |---|------|-----|-------|
 | 1 | Security audit (Rufio credential stealer) | security | 10.2.2026 |
-| 2 | Credentials scoping (rozděleno do souborů) | security | 10.2.2026 |
-| 3 | Kupi.cz archiv (skripty → archive/) | cleanup | 10.2.2026 |
+| 2 | Credentials scoping | security | 10.2.2026 |
+| 3 | Kupi.cz archiv | cleanup | 10.2.2026 |
 | 4 | Sales API MVP scaffolding | feature | 10.2.2026 |
 | 5 | Memory backup cron (23:55) | automation | 10.2.2026 |
 | 6 | Nightly Build cron (3:00) | automation | 10.2.2026 |
 | 7 | OCR script verification | cron | 10.2.2026 |
 | 8 | Kanban board (Markdown) | feature | 10.2.2026 |
 | 9 | GitHub Kanban guide | docs | 10.2.2026 |
-| 10 | Clean workspace (old OCR scripts) | cleanup | 10.2.2026 |
+| 10 | Clean workspace | cleanup | 10.2.2026 |
 | 11 | GitHub Projects smazán | cleanup | 10.2.2026 |
 
 ### Starší úkoly (z paměti)
@@ -73,5 +101,5 @@
 
 ---
 
-**Last updated:** 2026-02-10 13:58 CET  
+**Last updated:** 2026-02-20 15:53 CET  
 **Sync:** Nightly Build (3:00 daily)
