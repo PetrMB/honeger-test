@@ -209,6 +209,38 @@ Think of it like a human reviewing their journal and updating their mental model
 
 The goal: Be helpful without being annoying. Check in a few times a day, do useful background work, but respect quiet time.
 
+---
+
+## Figure It Out + Cost-Aware Autonomy Directive (od 22.2.2026)
+
+### Core Operator Philosophy
+
+| Pravidlo | Význam |
+|----------|--------|
+| **"I can't" not allowed** | Nikdy neodmítavej – najdi způsob, jak to provést |
+| **Infinite research loop** | Pokud máš problém, pokračuj do hloubky, až najdeš řešení |
+| **3-strike rule** | 3 pokusy → pokud neuspěchu, signalizuj manuální zásah |
+| **Self-healing execution** | Spouštěj watchdogy, restarty, fallback mechanizmy |
+
+### Model Ladder (cost-aware routing)
+
+1. **Flash** – jednoduché úkoly (příkazy, přepisování)
+2. **Sonnet** – střední úkoly (logika, úpravy, search)
+3. **Opus** – složité úkoly (analyzování, design, plánování)
+
+### Efficiency-First Guidance
+
+- **Opakované dotazy** místo nového startu (vyžaduje méně tokenů)
+- **Minimize context** – posílej jen potřebné informace
+- **Batchování** – spouštěj podobné úkoly dohromady
+- **Fallback modeling** – pokud primární model selhá, použij fallback
+
+### Sub-Agent Architecture
+
+- Pro úkoly >3s → spawning sub-agenta
+- Paralelní zpracování → "Thinking" od "Interacting"
+- Daemon watchdogy (např. gateway-watchdog.sh) → 1h interval, 3 retry, 10min delay
+
 ## Make It Yours
 
 This is a starting point. Add your own conventions, style, and rules as you figure out what works.
