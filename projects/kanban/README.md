@@ -13,31 +13,38 @@
 
 ---
 
+## 🎯 Dnes (24.2.2026)
+
+| # | Úkol | Čas | Stav |
+|---|------|-----|------|
+| 1 | Kanban sync (živý stav) | 06:13 | ✅ kompletní |
+| 2 | WhatsApp gateway reconnect | 03:49 | ✅ fix |
+| 3 | **Sales API MVP** | 06:15 | 🟡 **spuštěno** |
+
+**Co dělám teď:**
+- Vylepšuji Sales API: improve HTML parsing → save to DB → fuzzy search endpoint
+
+---
+
 ## 🔄 Probíhá
 
 | # | Úkol | Stav | Start |
 |---|------|------|-------|
-| 1 | Sales API MVP - Full implementation | 🟡 WIP | **24.2.2026** |
-
-### Podrobnosti
-
-#### Sales API MVP
-- FastAPI + Cloudflare Workers + D1 Database
-- Scraping, fuzzy search, price history
-- **Database hotová** (SQLAlchemy models ✅)
-- **Next:** Improve HTML parsing (BeautifulSoup), save to DB, fuzzy search endpoint
-- Status: **aktivoval jsem kanban sync 24.2.2026**
+| 1 | Sales API MVP - Full implementation | 🟡 WIP | **06:15 spuštěno** |
+| 2 | Otík Cloudflare Replicant | 🔬 Research | 8.2.2026 |
+| 3 | — | — | — |
 
 ---
 
-## ✅ Hotovo
+## ✅ Zprávy z dřívějška
 
 ### 2026-02-24
 
 | # | Úkol | Typ | Datum |
 |---|------|-----|-------|
-| 1 | Kanban sync (aktualizace podle reálného stavu) | docs | **24.2.2026** |
+| 1 | Kanban sync (živý stav) | docs | **24.2.2026** |
 | 2 | WhatsApp gateway reconnect (503 error) | fix | **24.2.2026** |
+| 3 | Sales API MVP spuštěn | feature | **06:15 spuštěno** |
 
 ### 2026-02-20
 
@@ -96,5 +103,6 @@
 
 ---
 
-**Last updated:** **2026-02-24 06:13 CET**  
-**Sync:** Kanban přepracován podle reálného stavu (Sales API MVP → Probíhá)
+**Last updated:** **2026-02-24 06:15 CET**  
+**Sync:** Kanban přepracován podle reálného stavu (Sales API MVP → Probíhá)  
+**Spuštěno dnes:** Kanban sync (06:13), WhatsApp reconnect (03:49), Sales API MVP (06:15)
