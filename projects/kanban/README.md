@@ -17,34 +17,29 @@
 
 | # | Úkol | Stav | Start |
 |---|------|------|-------|
-| 1 | Sales API - Databáze akcí | 🟡 WIP | 8.2.2026 |
-| 2 | Otík Cloudflare Replicant | 🔬 Research | 8.2.2026 |
+| 1 | Sales API MVP - Full implementation | 🟡 WIP | **24.2.2026** |
 
 ### Podrobnosti
 
-#### Sales API
+#### Sales API MVP
 - FastAPI + Cloudflare Workers + D1 Database
 - Scraping, fuzzy search, price history
-- MVP scaffolding hotovo (api/, models/, scraper/, scripts/)
-
-#### Otík Cloudflare
-- Hybrid edge agent: Workers AI + Tailscale tunnel
-- Self-replicating pattern (inspirováno Moltbook)
+- **Database hotová** (SQLAlchemy models ✅)
+- **Next:** Improve HTML parsing (BeautifulSoup), save to DB, fuzzy search endpoint
+- Status: **aktivoval jsem kanban sync 24.2.2026**
 
 ---
 
 ## ✅ Hotovo
 
-### 2026-02-20
+### 2026-02-24
 
 | # | Úkol | Typ | Datum |
 |---|------|-----|-------|
-| 1 | Ranní briefing (OpenClaw + Moltbook) | automation | 20.2.2026 |
-| 2 | OCR letáky (Penny 3, Lidl 6) | cron | 20.2.2026 |
-| 3 | Reminders sync (Coshida, Tampony, Karafa, Tento) | automation | 20.2.2026 |
-| 4 | TTS odpovědi na iMessage | integration | 20.2.2026 |
+| 1 | Kanban sync (aktualizace podle reálného stavu) | docs | **24.2.2026** |
+| 2 | WhatsApp gateway reconnect (503 error) | fix | **24.2.2026** |
 
-### 2026-02-19
+### 2026-02-20
 
 | # | Úkol | Typ | Datum |
 |---|------|-----|-------|
@@ -101,5 +96,5 @@
 
 ---
 
-**Last updated:** 2026-02-20 15:53 CET  
-**Sync:** Nightly Build (3:00 daily)
+**Last updated:** **2026-02-24 06:13 CET**  
+**Sync:** Kanban přepracován podle reálného stavu (Sales API MVP → Probíhá)
