@@ -20,9 +20,11 @@
 | 1 | Kanban sync (živý stav) | 06:13 | ✅ kompletní |
 | 2 | WhatsApp gateway reconnect | 03:49 | ✅ fix |
 | 3 | **Sales API MVP** | 06:15 | 🟡 **spuštěno** |
+| 4 | **Nákupní sync** | 08:00 | ✅ **dokončeno** |
 
 **Co dělám teď:**
 - Vylepšuji Sales API: improve HTML parsing → save to DB → fuzzy search endpoint
+- **Dnešní výsledek:** 2/19 položek v akci (Coshida stelivo 49,90 Kč, Salát 16,90 Kč)
 
 ---
 
@@ -45,6 +47,7 @@
 | 1 | Kanban sync (živý stav) | docs | **24.2.2026** |
 | 2 | WhatsApp gateway reconnect (503 error) | fix | **24.2.2026** |
 | 3 | Sales API MVP spuštěn | feature | **06:15 spuštěno** |
+| 4 | **Nákupní sync** | **cron** | **08:00 dokončeno** |
 
 ### 2026-02-20
 
@@ -103,6 +106,6 @@
 
 ---
 
-**Last updated:** **2026-02-24 06:15 CET**  
-**Sync:** Kanban přepracován podle reálného stavu (Sales API MVP → Probíhá)  
-**Spuštěno dnes:** Kanban sync (06:13), WhatsApp reconnect (03:49), Sales API MVP (06:15)
+**Last updated:** **2026-02-24 08:02 CET**  
+**Sync:** Kanban přepracován podle reálného stavu (Sales API MVP + Nákupní sync → spuštěno)  
+**Spuštěno dnes:** Kanban sync (06:13), WhatsApp reconnect (03:49), Sales API MVP (06:15), **Nákupní sync (08:00)**
